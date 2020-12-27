@@ -1,0 +1,14 @@
+<script>
+    // es6 定义变量,使用关键字 let
+    // 1. 创建代码块，定义变量
+    {
+        var a = 10
+        var a = 1000
+
+        let b = 20
+        let b = 2000 // 不能定义两次
+    }
+    // 2. 在代码块外边输出
+    console.log(a) // 10
+    console.log(b) // Uncaught ReferenceError: b is not defined
+</script>
