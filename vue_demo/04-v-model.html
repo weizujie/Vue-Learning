@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--单向绑定-->
+        <input type="text" v-bind:value="searchMap.keyWord">
+        <!--双向绑定-->
+        <input type="text" v-model="searchMap.keyWord">
+        <p>你要查询的是：{{searchMap.keyWord}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                searchMap: {
+                    keyWord: "weizujie"
+                }
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

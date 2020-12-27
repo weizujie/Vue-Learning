@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="ok" /> 是否同意
+        <h1 v-if="ok">选中</h1>
+        <h1 v-else>没有选中</h1>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                ok: false
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

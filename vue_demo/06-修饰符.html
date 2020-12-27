@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--点击提交并不会保存，而是执行我们的 onSubmitForm 方法-->
+        <form action="save" v-on:submit.prevent="onSubmitForm">
+            <input type="text" id="name" v-model="user.name" />
+            <button type="submit">保存</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                user: {}
+            },
+            methods: {
+                onSubmitForm() {
+                    if (this.user.name) {
+                        // 如果表单中有值
+                        console.log("提交表单")
+                    } else {
+                        alert("请输入用户名")
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

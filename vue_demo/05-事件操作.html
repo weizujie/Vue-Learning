@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="search">查询</button>
+        <!--简写方法-->
+        <button @click="search">查询1</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                searchMap: {
+                    keyWord: "weizujie"
+                },
+                // 查询结果
+                result: {}
+            },
+            methods: { // 定义多个方法
+                search() {
+                    console.log("search...")
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

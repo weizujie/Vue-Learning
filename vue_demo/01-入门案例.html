@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+    </div>
+
+    <script src="js/vue.min.js"></script>
+    <script>
+        // 创建 Vue 对象
+        new Vue({
+            el: "#app", // 绑定 vue 作用范围, 这个 app 就是 div 标签中的 id
+            data: { // 定义页面中显示的数据模型
+                message: "Hello Vue"
+            }
+        })
+    </script>
+</body>
+</html>
