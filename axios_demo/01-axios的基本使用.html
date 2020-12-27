@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--将数据在页面中显示出来-->
+        <table>
+            <tr v-for="item in userList">
+                <td>{{item.name}} ----</td>
+                <td>{{item.age}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // 定义空数组
+                userList: []
+            },
+            created() { // 在渲染页面之前执行
+                // 调用定义的方法
+                this.getUserList()
+            },
+            methods: { // 编写具体的方法
+                // 创建方法，查询所有用户数据
+                getUserList() {
+                    // 使用 axios 发生 ajax 请求
+                    axios.get("data.json") // 请求接口路径
+                        .then(response => { // 请求成功执行 then 方法, response 是变量名
+                           // console.log(response)
+                           // 将数据赋值给空数组
+                           this.userList = response.data.data.items
+                           console.log(this.userList)
+                            
+                        })
+                        .catch(error => { // 请求失败执行 catch 方法，error 是变量名
+
+                        })
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

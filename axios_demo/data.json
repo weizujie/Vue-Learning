@@ -1,0 +1,21 @@
+{
+    "success": true,
+    "code": 20000,
+    "message": "操作成功",
+    "data": {
+        "items": [
+            {
+                "name": "weizujie",
+                "age": 20
+            },
+            {
+                "name": "dashuaibi",
+                "age": 50
+            },
+            {
+                "name": "superman",
+                "age": 12
+            }
+        ]
+    }
+}
